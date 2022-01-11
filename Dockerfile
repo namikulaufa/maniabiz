@@ -1,8 +1,4 @@
-FROM php:8.0.0
-
-RUN apt-get update && \
-  apt-get install -y \
-  php \
-  
-
-RUN php bot.php
+FROM php:7.4-cli
+COPY . /usr/src/myapp
+WORKDIR /usr/src/myapp
+CMD [ "php", "./bot.php" ]
